@@ -160,6 +160,7 @@
     transition: opacity .3s ease, transform .3s ease;
   }
 
+  .js [role="tabpanel"][hidden] { display: none; }
   .package-frame {
     background: linear-gradient(160deg, #1c1812, #0d0b08);
   }
@@ -167,7 +168,7 @@
   .hero-in { animation: heroIn .9s ease both; }
   @keyframes heroIn { from { transform: translateY(18px); } to { transform: none; } }
 
-  .filter-btn[aria-pressed="true"] {
+  .filter-btn[aria-pressed="true"], .tab-btn[aria-selected="true"] {
     background: linear-gradient(120deg, #e9d290, #cfa03f, #9c6d22);
     color: #100e0b;
     border-color: transparent;
@@ -234,39 +235,24 @@
 <main>
 
 <!-- HERO -->
-<section id="inicio" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+<section id="inicio" class="relative min-h-[88svh] sm:min-h-screen flex items-center justify-center pt-24 pb-14 overflow-hidden">
   <div class="absolute inset-0">
     <img src="/img/portada-hands-and-paradise-spa.webp" srcset="/img/portada-hands-and-paradise-spa-960.webp 960w, /img/portada-hands-and-paradise-spa.webp 1600w" sizes="100vw" width="1600" height="900" fetchpriority="high" alt="Reception at Hands and Paradise Spa in La Sabana Oeste, San José, with warm lighting and luxury decor" class="w-full h-full object-cover">
     <div class="absolute inset-0 bg-gradient-to-b from-ink-900/50 via-ink-900/35 to-ink-900/55"></div>
   </div>
 
   <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-    <p class="hero-in uppercase tracking-[0.35em] text-white text-xs sm:text-sm mb-5 font-semibold" style="text-shadow: 0 2px 16px rgba(0,0,0,0.65)">Luxury Wellness<span class="hidden sm:inline"> · </span><br class="sm:hidden">San José, Costa Rica</p>
-    <h1 class="hero-in font-display text-4xl sm:text-6xl md:text-7xl leading-tight gold-text font-bold mb-6" style="text-shadow: 0 4px 24px rgba(0,0,0,0.65)">
-      Hands and Paradise Spa
-    </h1>
-
-    <p class="hero-in inline-block bg-ink-800/70 border border-gold-400/30 rounded-full px-5 py-3 text-sm sm:text-base font-medium text-gold-100 mb-8 max-w-2xl leading-relaxed">
-      We are a professional spa dedicated exclusively to wellness and relaxation. All our services are performed under strict standards of professionalism and respect.
-    </p>
-
-    <p class="hero-in text-gold-100/80 text-lg sm:text-xl font-light mb-10 max-w-xl mx-auto">
-      A sanctuary where time stands still, your senses awaken and your body finds its perfect balance.
-    </p>
+    <p class="hero-in uppercase tracking-[0.3em] text-white text-xs sm:text-sm mb-4 font-semibold" style="text-shadow: 0 2px 16px rgba(0,0,0,0.65)">Hands and Paradise Spa<span class="hidden sm:inline"> · La Sabana Oeste</span></p>
+    <h1 class="hero-in font-display text-4xl sm:text-5xl md:text-6xl leading-tight gold-text font-bold mb-5" style="text-shadow: 0 4px 24px rgba(0,0,0,0.65)">Professional Spa &amp; Massage in La Sabana, San José</h1>
+    <p class="hero-in text-gold-100/90 text-base sm:text-xl font-light leading-relaxed mb-8 max-w-2xl mx-auto" style="text-shadow: 0 2px 16px rgba(0,0,0,0.65)">A professional spa dedicated exclusively to wellness and relaxation: therapeutic massage, facials and packages, performed under strict standards of professionalism and respect.</p>
 
     <div class="hero-in flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://wa.me/50660051314?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Hands%20and%20Paradise%20Spa" target="_blank" rel="noopener" data-track="whatsapp" data-service="general" class="btn-primary inline-flex items-center justify-center gap-2 font-semibold uppercase tracking-wider px-9 py-4 rounded-full text-sm shadow-lg shadow-black/40 focus-gold w-full sm:w-auto">
+      <a href="https://wa.me/50660051314?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Hands%20and%20Paradise%20Spa" target="_blank" rel="noopener" data-track="whatsapp" data-service="general" class="btn-primary inline-flex items-center justify-center gap-2 font-semibold uppercase tracking-wider px-8 py-3.5 rounded-full text-sm shadow-lg shadow-black/40 focus-gold w-full sm:w-auto">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp
       </a>
-      <a href="#servicios" class="border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 font-medium uppercase tracking-wider px-9 py-4 rounded-full text-sm transition focus-gold w-full sm:w-auto text-center">
+      <a href="#servicios" class="border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 font-medium uppercase tracking-wider px-8 py-3.5 rounded-full text-sm transition focus-gold w-full sm:w-auto text-center">
         View Services
       </a>
-    </div>
-
-    <div class="hero-in flex flex-wrap items-center justify-center gap-3 mt-10 text-xs sm:text-sm">
-      <a href="#servicios" class="px-4 py-2 rounded-full bg-ink-800/60 border border-gold-400/20 hover:border-gold-300 text-gold-200 transition focus-gold">Services</a>
-      <a href="#insignia" class="px-4 py-2 rounded-full bg-ink-800/60 border border-gold-400/20 hover:border-gold-300 text-gold-200 transition focus-gold">Signature Treatment</a>
-      <a href="#paquetes" class="px-4 py-2 rounded-full bg-ink-800/60 border border-gold-400/20 hover:border-gold-300 text-gold-200 transition focus-gold">Packages</a>
     </div>
   </div>
 
@@ -277,670 +263,467 @@
   </div>
 </section>
 
-<!-- BIENVENIDA / SOBRE NOSOTROS -->
-<section class="max-w-7xl mx-auto px-6 sm:px-8 py-24 grid md:grid-cols-2 gap-14 items-center">
-  <div class="reveal">
-    <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">Welcome</p>
-    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-100 mb-6 leading-snug">
-      Your slice of paradise in the heart of the city
-    </h2>
-    <div class="gold-line mb-6"></div>
-    <p class="text-gold-100/75 leading-relaxed mb-5">
-      At Hands and Paradise Spa we believe wellness is a right, not an occasional luxury. Every treatment
-      is designed to help you unwind, take care of yourself and restore your physical and mental balance.
-    </p>
-    <p class="text-gold-100/75 leading-relaxed mb-8">
-      Our team of professional therapists works to the highest standards of respect, hygiene and
-      excellence, offering a safe, warm and truly restorative experience on every visit. Visiting Costa Rica? We are
-      just minutes from La Sabana Park and Rohrmoser, and we are happy to assist you in English.
-    </p>
-    <a href="#servicios" class="inline-block border-b border-gold-300 text-gold-200 hover:text-gold-100 font-medium uppercase tracking-wider text-sm pb-1 focus-gold">
-      Discover our services →
-    </a>
-  </div>
-  <div class="reveal">
-    <img src="/img/terapeuta-profesional-preparando-una-experiencia-de-bienesta.webp" width="1050" height="1400" decoding="async" alt="Professional therapist preparing a wellness experience at Hands and Paradise Spa" loading="lazy" class="rounded-2xl w-full h-[420px] object-cover shadow-2xl shadow-black/50 border border-gold-400/15">
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section id="servicios" class="py-24 bg-ink-800/40 border-y border-gold-400/10">
+<!-- SERVICIOS (incluye el tratamiento insignia) -->
+<section id="servicios" class="py-14 sm:py-24 bg-ink-800/40 border-y border-gold-400/10">
   <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 reveal">
       <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">Full Menu</p>
       <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-100 mb-5">Our Services</h2>
       <div class="gold-line mx-auto mb-5"></div>
       <p class="text-gold-100/70">Therapeutic and body massages and facial treatments in San José, next to La Sabana and Rohrmoser, designed for your complete well-being. Book any of them directly on WhatsApp. Prices in Costa Rican colones (₡).</p>
     </div>
 
-    <div class="reveal flex flex-wrap justify-center gap-2.5 mb-12" role="group" aria-label="Filter treatments">
-      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-5 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold" data-filter="todos" aria-pressed="true">All</button>
-      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-5 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold" data-filter="masajes" aria-pressed="false">Massages</button>
-      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-5 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold" data-filter="faciales" aria-pressed="false">Facials</button>
-      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-5 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold" data-filter="corporales" aria-pressed="false">Body</button>
-      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-5 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold" data-filter="parejas" aria-pressed="false">Couples</button>
-      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-5 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold" data-filter="especiales" aria-pressed="false">Special Experiences</button>
+    <div class="reveal flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2.5 mb-6 sm:mb-10 overflow-x-auto pb-2 -mx-6 px-6 sm:mx-0 sm:px-0 sm:overflow-visible" role="group" aria-label="Filter treatments">
+      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider whitespace-nowrap shrink-0 transition focus-gold" data-filter="todos" aria-pressed="true">All</button>
+      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider whitespace-nowrap shrink-0 transition focus-gold" data-filter="masajes" aria-pressed="false">Massages</button>
+      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider whitespace-nowrap shrink-0 transition focus-gold" data-filter="faciales" aria-pressed="false">Facials</button>
+      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider whitespace-nowrap shrink-0 transition focus-gold" data-filter="corporales" aria-pressed="false">Body</button>
+      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider whitespace-nowrap shrink-0 transition focus-gold" data-filter="parejas" aria-pressed="false">Couples</button>
+      <button type="button" class="filter-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider whitespace-nowrap shrink-0 transition focus-gold" data-filter="especiales" aria-pressed="false">Special Experiences</button>
     </div>
     <p id="filtroEstado" class="sr-only" aria-live="polite"></p>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7">
 
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes especiales">
+      <article id="insignia" class="reveal card-surface rounded-3xl overflow-hidden border-2 border-gold-300/40 shadow-2xl shadow-gold-900/30 sm:col-span-2 lg:col-span-3 grid md:grid-cols-2 scroll-mt-24" data-cat="masajes especiales">
         <div class="relative">
-        <img src="/img/masaje-cubano-con-ron-tratamiento-insignia-de-hands-and-para.webp" alt="Cuban Rum Massage, signature treatment at Hands and Paradise Spa" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <span class="absolute top-4 left-4 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">★ Signature</span>
-      </div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Cuban Rum Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡33,900</span>
+          <img src="/img/masaje-cubano-con-ron-tratamiento-insignia-de-hands-and-para.webp" width="933" height="1400" decoding="async" alt="Cuban Rum Massage, the signature treatment at Hands and Paradise Spa" loading="lazy" class="w-full h-52 md:h-full object-cover md:min-h-[360px]">
+          <span class="absolute top-4 left-4 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">★ Our Signature Treatment</span>
+        </div>
+        <div class="p-6 sm:p-10 flex flex-col justify-center">
+          <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-2">Only at our spa</p>
+          <h3 class="font-display text-2xl sm:text-4xl font-bold text-gold-100 mb-1">Cuban Rum Massage</h3>
+          <p class="text-gold-300 italic text-base sm:text-lg mb-4">The Caribbean in a massage</p>
+          <p class="text-gold-100/75 text-sm sm:text-base leading-relaxed mb-3">Let yourself be wrapped in a unique experience inspired by the spirit and warmth of Cuba. Our exclusive Cuban Rum Massage combines relaxing massage techniques with the essence of rum, creating a sensory ritual designed to release tension, renew the body and awaken the senses.</p>
+          <p class="hidden sm:block text-gold-100/75 leading-relaxed mb-3">A warm, enveloping and deeply relaxing experience where every detail is designed to carry you to a moment of true rest and well-being.</p>
+          <p class="text-gold-200 italic text-sm sm:text-base leading-relaxed mb-6">A different experience. An unforgettable ritual. Only at Hands and Paradise Spa.</p>
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <span class="font-display text-3xl gold-text font-bold">₡33,900</span>
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Cuban%20Rum%20Massage.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Cuban Rum Massage" class="btn-primary inline-flex items-center justify-center gap-2 font-semibold uppercase tracking-wider px-7 py-3 rounded-full text-sm focus-gold w-full sm:w-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book this ritual</a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">Our signature treatment: relaxing massage techniques combined with the essence of rum, in a sensory ritual inspired by the warmth of Cuba.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Cuban%20Rum%20Massage.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Cuban Rum Massage" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
 
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-relajante-de-50-minutos.webp" alt="50-minute relaxing massage" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Relaxing Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡28,250</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-relajante-de-50-minutos.webp" alt="50-minute relaxing massage" loading="lazy" decoding="async" width="933" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Relaxing Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A session designed to release built-up tension and give you a moment of physical and mental rest. Ideal for anyone who wants to step away from routine and recharge.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Relaxing%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Relaxing Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Relaxing Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡28,250</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Relaxing%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Relaxing Massage (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Relaxing Massage 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡39,500</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A session designed to release built-up tension and give you a moment of physical and mental rest. Ideal for anyone who wants to step away from routine and recharge.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Relaxing%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Relaxing Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-terapeutico-de-50-minutos.webp" alt="50-minute therapeutic massage" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Therapeutic Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡33,900</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-terapeutico-de-50-minutos.webp" alt="50-minute therapeutic massage" loading="lazy" decoding="async" width="933" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Therapeutic Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment that targets areas of muscle tension with specific techniques to improve your sense of well-being and physical comfort.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Therapeutic%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Therapeutic Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Therapeutic Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡33,900</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment that targets areas of muscle tension with specific techniques to improve your sense of well-being and physical comfort.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Therapeutic%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Therapeutic Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-deportivo-de-descargas-de-50-minutos.webp" alt="50-minute sports recovery massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Sports Recovery Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡33,950</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-deportivo-de-descargas-de-50-minutos.webp" alt="50-minute sports recovery massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Sports Recovery Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">Ideal for active people who want to relieve muscle fatigue and support better recovery after exercise.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Sports%20Recovery%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Sports Recovery Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Sports Recovery Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡33,950</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">Ideal for active people who want to relieve muscle fatigue and support better recovery after exercise.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Sports%20Recovery%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Sports Recovery Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-descontracturante-de-50-minutos.webp" alt="50-minute deep tissue massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Deep Tissue Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡33,900</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-descontracturante-de-50-minutos.webp" alt="50-minute deep tissue massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Deep Tissue Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A session focused on releasing localized muscle tension and bringing relief to the areas where physical stress tends to build up.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Deep%20Tissue%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Deep Tissue Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Deep Tissue Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡33,900</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A session focused on releasing localized muscle tension and bringing relief to the areas where physical stress tends to build up.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Deep%20Tissue%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Deep Tissue Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes especiales">
-        <img src="/img/masaje-con-piedras-calientes-de-50-minutos.webp" alt="50-minute hot stone massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Hot Stone Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡28,250</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes especiales">
+        <img src="/img/masaje-con-piedras-calientes-de-50-minutos.webp" alt="50-minute hot stone massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Hot Stone Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A relaxing treatment that uses heated stones to spread warmth evenly, creating a pleasant feeling of rest and well-being.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Hot%20Stone%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Hot Stone Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Hot Stone Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡28,250</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Hot%20Stone%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Hot Stone Massage (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Hot Stone Massage 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡39,500</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A relaxing treatment that uses heated stones to spread warmth evenly, creating a pleasant feeling of rest and well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Hot%20Stone%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Hot Stone Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes corporales">
-        <img src="/img/masaje-con-ventosas-de-50-minutos.webp" alt="50-minute cupping massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Cupping Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡28,250</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes corporales">
+        <img src="/img/masaje-con-ventosas-de-50-minutos.webp" alt="50-minute cupping massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Cupping Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">An experience that combines massage with cupping to work on specific areas of the body and enhance muscle relaxation.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Cupping%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Cupping Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Cupping Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡28,250</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Cupping%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Cupping Massage (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Cupping Massage 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡39,500</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">An experience that combines massage with cupping to work on specific areas of the body and enhance muscle relaxation.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Cupping%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Cupping Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes corporales">
-        <img src="/img/masaje-de-drenaje-linfatico-solo-piernas-de-50-minutos.webp" alt="50-minute lymphatic drainage massage for legs" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Lymphatic Drainage (Legs Only)</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡28,250</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes corporales">
+        <img src="/img/masaje-de-drenaje-linfatico-solo-piernas-de-50-minutos.webp" alt="50-minute lymphatic drainage massage for legs" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Lymphatic Drainage (Legs Only)</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment focused exclusively on the legs, using gentle techniques that promote a pleasant feeling of lightness and rest.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Lymphatic%20Drainage%20%28Legs%20Only%29%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Lymphatic Drainage (Legs Only) (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Lymphatic Drainage (Legs Only) 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡28,250</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment focused exclusively on the legs, using gentle techniques that promote a pleasant feeling of lightness and rest.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Lymphatic%20Drainage%20%28Legs%20Only%29%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Lymphatic Drainage (Legs Only) (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-localizado-de-25-minutos.webp" alt="25-minute targeted massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Targeted Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡16,950</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-localizado-de-25-minutos.webp" alt="25-minute targeted massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Targeted Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A short session focused on one specific area of the body that needs special attention. Ideal for relieving localized tension quickly and effectively.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Targeted%20Massage%20%2825%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Targeted Massage (25 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Targeted Massage 25 min, </span>⏱ 25 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡16,950</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 25 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A short session focused on one specific area of the body that needs special attention. Ideal for relieving localized tension quickly and effectively.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Targeted%20Massage%20%2825%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Targeted Massage (25 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-shiatsu-de-50-minutos.webp" alt="50-minute shiatsu massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Shiatsu</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡33,900</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-shiatsu-de-50-minutos.webp" alt="50-minute shiatsu massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Shiatsu</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A Japanese technique that applies controlled pressure to specific points on the body to promote balance, relaxation and overall well-being.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Shiatsu%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Shiatsu (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Shiatsu 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡33,900</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A Japanese technique that applies controlled pressure to specific points on the body to promote balance, relaxation and overall well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Shiatsu%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Shiatsu (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/acupresion-de-25-minutos.webp" alt="25-minute acupressure" loading="lazy" decoding="async" width="640" height="479" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Acupressure</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡16,950</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/acupresion-de-25-minutos.webp" alt="25-minute acupressure" loading="lazy" decoding="async" width="640" height="479" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Acupressure</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment based on applying pressure to specific points on the body, providing a relaxing experience focused on whole-body well-being.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Acupressure%20%2825%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Acupressure (25 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Acupressure 25 min, </span>⏱ 25 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡16,950</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 25 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment based on applying pressure to specific points on the body, providing a relaxing experience focused on whole-body well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Acupressure%20%2825%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Acupressure (25 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/reflexologia-podal-de-25-minutos.webp" alt="25-minute foot reflexology" loading="lazy" decoding="async" width="1200" height="900" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Foot Reflexology</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡16,950</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/reflexologia-podal-de-25-minutos.webp" alt="25-minute foot reflexology" loading="lazy" decoding="async" width="1200" height="900" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Foot Reflexology</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A specialized foot massage that uses pressure on specific points to provide deep relaxation and a pleasant sense of balance and well-being.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Foot%20Reflexology%20%2825%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Foot Reflexology (25 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Foot Reflexology 25 min, </span>⏱ 25 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡16,950</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 25 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A specialized foot massage that uses pressure on specific points to provide deep relaxation and a pleasant sense of balance and well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Foot%20Reflexology%20%2825%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Foot Reflexology (25 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes corporales">
-        <img src="/img/masaje-de-drenaje-linfatico-de-80-minutos.webp" alt="80-minute lymphatic drainage massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Lymphatic Drainage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡39,500</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes corporales">
+        <img src="/img/masaje-de-drenaje-linfatico-de-80-minutos.webp" alt="80-minute lymphatic drainage massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Lymphatic Drainage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A massage performed with gentle, specific movements to stimulate the lymphatic system. Ideal for those seeking a feeling of lightness, well-being and body relaxation.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Lymphatic%20Drainage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Lymphatic Drainage (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Lymphatic Drainage 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡39,500</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A massage performed with gentle, specific movements to stimulate the lymphatic system. Ideal for those seeking a feeling of lightness, well-being and body relaxation.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Lymphatic%20Drainage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Lymphatic Drainage (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes corporales">
-        <img src="/img/masaje-con-ventosas-de-80-minutos.webp" alt="80-minute cupping massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Cupping Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡39,500</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-descontracturante-de-50-minutos.webp" alt="Advanced deep tissue massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Advanced Deep Tissue Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment that works on areas of built-up tension and muscle knots. Ideal for people who sit for long hours, do frequent physical work or experience muscle stress.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Advanced%20Deep%20Tissue%20Massage.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Advanced Deep Tissue Massage" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Advanced Deep Tissue Massage, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡45,200</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment that adds cupping to a traditional massage. It offers a different experience focused on specific areas of the body and overall well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Cupping%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Cupping Massage (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes especiales">
-        <img src="/img/masaje-con-piedras-calientes-de-80-minutos.webp" alt="80-minute hot stone massage" loading="lazy" decoding="async" width="935" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Hot Stone Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡39,500</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-deportivo-de-descargas-y-estiramientos-de-80-minutos.webp" alt="80-minute sports recovery massage with stretching" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Sports Recovery &amp; Stretching</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">Designed especially for active people and athletes. It combines muscle recovery techniques and stretching to reduce fatigue and improve physical recovery.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Sports%20Recovery%20%26%20Stretching%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Sports Recovery &amp; Stretching (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Sports Recovery &amp; Stretching 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡50,850</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A deeply relaxing experience using warm volcanic stones to transfer heat to the body and enhance the feeling of rest. Perfect for those seeking total relaxation.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Hot%20Stone%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Hot Stone Massage (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-descontracturante-de-50-minutos.webp" alt="Advanced deep tissue massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Advanced Deep Tissue Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡45,200</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes">
+        <img src="/img/masaje-terapeutico-con-estiramientos-de-80-minutos.webp" alt="80-minute therapeutic massage with stretching" loading="lazy" decoding="async" width="933" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Therapeutic Massage &amp; Stretching</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment focused on relieving muscle tension and improving mobility through massage techniques combined with stretching. Ideal for those seeking physical well-being and deep relaxation.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Therapeutic%20Massage%20%26%20Stretching%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Therapeutic Massage &amp; Stretching (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Therapeutic Massage &amp; Stretching 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡50,850</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment that works on areas of built-up tension and muscle knots. Ideal for people who sit for long hours, do frequent physical work or experience muscle stress.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Advanced%20Deep%20Tissue%20Massage.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Advanced Deep Tissue Massage" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-deportivo-de-descargas-y-estiramientos-de-80-minutos.webp" alt="80-minute sports recovery massage with stretching" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Sports Recovery &amp; Stretching</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡50,850</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/limpieza-facial-profunda.webp" alt="Deep cleansing facial" loading="lazy" decoding="async" width="933" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Deep Cleansing Facial</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment designed to deeply cleanse the skin, removing built-up impurities, dead cells and residue that affect its appearance. Ideal for a fresher, cleaner face and a renewed sense of well-being.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Deep%20Cleansing%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Deep Cleansing Facial" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Deep Cleansing Facial, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡25,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">Designed especially for active people and athletes. It combines muscle recovery techniques and stretching to reduce fatigue and improve physical recovery.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Sports%20Recovery%20%26%20Stretching%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Sports Recovery &amp; Stretching (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-terapeutico-con-estiramientos-de-80-minutos.webp" alt="80-minute therapeutic massage with stretching" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Therapeutic Massage &amp; Stretching</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡50,850</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/facial-control-de-acne.webp" alt="Acne control facial" loading="lazy" decoding="async" width="1200" height="875" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Acne Control Facial</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A specialized treatment for acne-prone and blemished skin. It helps keep the skin clean, balanced and healthier-looking with techniques and products tailored to its needs.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Acne%20Control%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Acne Control Facial" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Acne Control Facial, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡25,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment focused on relieving muscle tension and improving mobility through massage techniques combined with stretching. Ideal for those seeking physical well-being and deep relaxation.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Therapeutic%20Massage%20%26%20Stretching%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Therapeutic Massage &amp; Stretching (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes">
-        <img src="/img/masaje-relajante-de-80-minutos.webp" alt="80-minute relaxing massage" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Relaxing Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡39,500</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/facial-rejuvenecedor-bioage-con-microagujas.webp" alt="Bioage rejuvenating facial with microneedling" loading="lazy" decoding="async" width="1050" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Bioage Rejuvenating Facial</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">An innovative microneedling treatment that stimulates the skin's natural renewal processes. Ideal for improving the texture, radiance and overall appearance of the face.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Bioage%20Rejuvenating%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Bioage Rejuvenating Facial" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Bioage Rejuvenating Facial, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡35,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">An experience designed to disconnect from daily stress and reach a deep state of relaxation. Gentle, harmonious movements help release tension and promote a complete sense of well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Relaxing%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Relaxing Massage (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/limpieza-facial-profunda.webp" alt="Deep cleansing facial" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Deep Cleansing Facial</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡25,000</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/facial-de-hidratacion-profunda-hilos-de-seda.webp" alt="Silk Threads deep hydration facial" loading="lazy" decoding="async" width="933" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">"Silk Threads" Deep Hydration Facial</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A facial experience focused on intense hydration and nourishment. It helps restore softness, elasticity and a fresh, radiant, revitalized look.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20%22Silk%20Threads%22%20Deep%20Hydration%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="&quot;Silk Threads&quot; Deep Hydration Facial" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: "Silk Threads" Deep Hydration Facial, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡25,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment designed to deeply cleanse the skin, removing built-up impurities, dead cells and residue that affect its appearance. Ideal for a fresher, cleaner face and a renewed sense of well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Deep%20Cleansing%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Deep Cleansing Facial" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/facial-control-de-acne.webp" alt="Acne control facial" loading="lazy" decoding="async" width="1200" height="875" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Acne Control Facial</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡25,000</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/tratamiento-despigmentante-avanzado.webp" alt="Advanced depigmenting treatment" loading="lazy" decoding="async" width="788" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Advanced Depigmenting Facial</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment designed for skin with dark spots or uneven tone. It aims for a more even, radiant and balanced complexion, visibly improving the look of the face.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Advanced%20Depigmenting%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Advanced Depigmenting Facial" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Advanced Depigmenting Facial, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡35,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A specialized treatment for acne-prone and blemished skin. It helps keep the skin clean, balanced and healthier-looking with techniques and products tailored to its needs.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Acne%20Control%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Acne Control Facial" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/facial-rejuvenecedor-bioage-con-microagujas.webp" alt="Bioage rejuvenating facial with microneedling" loading="lazy" decoding="async" width="1050" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Bioage Rejuvenating Facial</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡35,000</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/peeling-de-alta-gama-regenerador-t35p.webp" alt="T35P premium regenerating peel" loading="lazy" decoding="async" width="447" height="447" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Premium Regenerating Peel (T35P)</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A premium facial treatment focused on renewing and revitalizing the skin. Ideal for those looking for an advanced experience that improves the look and quality of their skin.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Premium%20Regenerating%20Peel%20%28T35P%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Premium Regenerating Peel (T35P)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Premium Regenerating Peel (T35P), </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡40,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">An innovative microneedling treatment that stimulates the skin's natural renewal processes. Ideal for improving the texture, radiance and overall appearance of the face.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Bioage%20Rejuvenating%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Bioage Rejuvenating Facial" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/facial-de-hidratacion-profunda-hilos-de-seda.webp" alt="Silk Threads deep hydration facial" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">"Silk Threads" Deep Hydration Facial</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡25,000</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/peeling-antioxidante-e-iluminador.webp" alt="Antioxidant brightening peel" loading="lazy" decoding="async" width="933" height="1400" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Antioxidant Brightening Peel</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A treatment that combines exfoliation with antioxidant care to bring radiance and freshness to the skin. Perfect for a more glowing, healthy-looking face.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Antioxidant%20Brightening%20Peel.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Antioxidant Brightening Peel" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Antioxidant Brightening Peel, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡25,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A facial experience focused on intense hydration and nourishment. It helps restore softness, elasticity and a fresh, radiant, revitalized look.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20%22Silk%20Threads%22%20Deep%20Hydration%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="&quot;Silk Threads&quot; Deep Hydration Facial" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/tratamiento-despigmentante-avanzado.webp" alt="Advanced depigmenting treatment" loading="lazy" decoding="async" width="788" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Advanced Depigmenting Facial</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡35,000</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="faciales">
+        <img src="/img/lifting-facial-sin-cirugia-remodelante-y-tensor.webp" alt="Non-surgical firming facial lift" loading="lazy" decoding="async" width="1200" height="600" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Non-Surgical Facial Lift</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A non-invasive facial treatment designed to visibly improve firmness and definition. An excellent alternative for a more youthful look without surgery.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Non-Surgical%20Facial%20Lift.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Non-Surgical Facial Lift" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Non-Surgical Facial Lift, </span>Book</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡25,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment designed for skin with dark spots or uneven tone. It aims for a more even, radiant and balanced complexion, visibly improving the look of the face.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Advanced%20Depigmenting%20Facial.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Advanced Depigmenting Facial" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/peeling-de-alta-gama-regenerador-t35p.webp" alt="T35P premium regenerating peel" loading="lazy" decoding="async" width="447" height="447" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Premium Regenerating Peel (T35P)</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡40,000</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes especiales">
+        <img src="/img/masaje-a-4-manos-de-50-minutos.webp" alt="50-minute four-hands massage" loading="lazy" decoding="async" width="1200" height="800" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Four-Hands Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">A synchronized relaxation experience in which two therapists work at the same time, creating fluid, enveloping movements. Ideal for releasing tension, relaxing the muscles and enjoying deep well-being.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Four-Hands%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Four-Hands Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Four-Hands Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡75,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Four-Hands%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Four-Hands Massage (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Four-Hands Massage 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡90,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A premium facial treatment focused on renewing and revitalizing the skin. Ideal for those looking for an advanced experience that improves the look and quality of their skin.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Premium%20Regenerating%20Peel%20%28T35P%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Premium Regenerating Peel (T35P)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/peeling-antioxidante-e-iluminador.webp" alt="Antioxidant brightening peel" loading="lazy" decoding="async" width="933" height="1400" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Antioxidant Brightening Peel</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡25,000</span>
+      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex sm:flex-col" data-cat="masajes parejas">
+        <img src="/img/masaje-en-parejas-de-50-minutos.webp" alt="50-minute couples massage" loading="lazy" decoding="async" width="1200" height="675" class="w-24 sm:w-full sm:h-48 object-cover shrink-0">
+        <div class="p-4 sm:p-6 flex flex-col flex-1 min-w-0">
+          <h3 class="font-display text-base sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Couples Massage</h3>
+          <p class="text-gold-100/65 text-sm leading-relaxed mb-4">Enjoy a moment of relaxation and connection together. A massage designed to release tension, relax the body and create a shared wellness experience in an intimate, calm and welcoming setting.</p>
+          <div class="mt-auto space-y-2">
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Couples%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Couples Massage (50 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Couples Massage 50 min, </span>⏱ 50 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡50,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
+            <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Couples%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Couples Massage (80 min)" class="flex items-center justify-between gap-3 w-full border border-gold-300/40 hover:border-gold-300 hover:bg-gold-300/10 rounded-full pl-4 pr-3 py-2.5 text-xs sm:text-sm transition focus-gold"><span class="text-gold-100/80 uppercase tracking-wider"><span class="sr-only">Book on WhatsApp: Couples Massage 80 min, </span>⏱ 80 min</span><span class="flex items-center gap-2"><span class="gold-text font-semibold whitespace-nowrap">₡75,000</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4 text-gold-200 shrink-0" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg></span></a>
           </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A treatment that combines exfoliation with antioxidant care to bring radiance and freshness to the skin. Perfect for a more glowing, healthy-looking face.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Antioxidant%20Brightening%20Peel.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Antioxidant Brightening Peel" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="faciales">
-        <img src="/img/lifting-facial-sin-cirugia-remodelante-y-tensor.webp" alt="Non-surgical firming facial lift" loading="lazy" decoding="async" width="1200" height="600" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Non-Surgical Facial Lift</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡25,000</span>
-          </div>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A non-invasive facial treatment designed to visibly improve firmness and definition. An excellent alternative for a more youthful look without surgery.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Non-Surgical%20Facial%20Lift.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Non-Surgical Facial Lift" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes especiales">
-        <img src="/img/masaje-a-4-manos-de-50-minutos.webp" alt="50-minute four-hands massage" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Four-Hands Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡75,000</span>
-          </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A synchronized relaxation experience in which two therapists work at the same time, creating fluid, enveloping movements. Ideal for releasing tension, relaxing the muscles and enjoying deep well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Four-Hands%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Four-Hands Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes especiales">
-        <img src="/img/masaje-a-4-manos-de-80-minutos.webp" alt="80-minute four-hands massage" loading="lazy" decoding="async" width="612" height="407" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Four-Hands Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡90,000</span>
-          </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A premium experience of deep, total relaxation. For 80 minutes, two therapists work in perfect sync, combining enveloping, harmonious movements to release built-up tension and bring body and mind to a state of complete well-being.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Four-Hands%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Four-Hands Massage (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes parejas">
-        <img src="/img/masaje-en-parejas-de-50-minutos.webp" alt="50-minute couples massage" loading="lazy" decoding="async" width="1200" height="675" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Couples Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡50,000</span>
-          </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 50 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">Enjoy a moment of relaxation and connection together. A massage designed to release tension, relax the body and create a shared wellness experience in an intimate, calm and welcoming setting.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Couples%20Massage%20%2850%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Couples Massage (50 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="reveal card-surface rounded-2xl overflow-hidden transition-all duration-500 flex flex-col" data-cat="masajes parejas">
-        <img src="/img/masaje-en-parejas-de-80-minutos.webp" alt="80-minute couples massage" loading="lazy" decoding="async" width="1024" height="607" class="w-full h-52 object-cover">
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-start justify-between gap-3 mb-2">
-            <h3 class="font-display text-lg text-gold-100 font-semibold">Couples Massage</h3>
-            <span class="gold-text font-semibold whitespace-nowrap">₡75,000</span>
-          </div>
-          <p class="text-xs uppercase tracking-widest text-gold-300 mb-3">⏱ 80 min</p>
-          <p class="text-gold-100/65 text-sm leading-relaxed mb-5">A fuller experience to enjoy as a couple, with no rush. For 80 minutes, let yourselves go with a deeply relaxing massage that releases built-up tension, revitalizes the body and gives you a true moment of connection and well-being together.</p>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Couples%20Massage%20%2880%20min%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Couples Massage (80 min)" class="mt-auto inline-flex items-center justify-center gap-2 w-full border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 hover:border-gold-300 rounded-full px-5 py-3.5 text-xs font-semibold uppercase tracking-wider transition focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book on WhatsApp</a>
         </div>
       </article>
 
     </div>
-  </div>
-</section>
-
-<!-- TRATAMIENTO INSIGNIA -->
-<section id="insignia" class="py-24 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-20">
-    <img src="/img/ambiente-calido-y-caribeno-del-spa.webp" width="1050" height="1400" decoding="async" alt="Warm Caribbean-inspired spa atmosphere" loading="lazy" class="w-full h-full object-cover">
-  </div>
-  <div class="relative max-w-6xl mx-auto px-6 sm:px-8">
-    <div class="reveal grid md:grid-cols-2 gap-0 card-surface rounded-3xl overflow-hidden border-2 border-gold-300/40 shadow-2xl shadow-gold-900/30">
-      <div class="relative">
-        <img src="/img/masaje-cubano-con-ron-tratamiento-insignia-de-hands-and-para.webp" width="933" height="1400" decoding="async" alt="Cuban Rum Massage, the signature treatment at Hands and Paradise Spa" loading="lazy" class="w-full h-full object-cover min-h-[320px]">
-        <span class="absolute top-5 left-5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
-          ★ Our Signature Treatment
-        </span>
-      </div>
-      <div class="p-8 sm:p-12 flex flex-col justify-center">
-        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-3">Only at our spa</p>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-100 mb-2">Cuban Rum Massage</h2>
-        <p class="text-gold-300 italic text-lg mb-5">The Caribbean in a massage</p>
-        <p class="text-gold-100/75 leading-relaxed mb-4">
-          Let yourself be wrapped in a unique experience inspired by the spirit and warmth of Cuba. Our exclusive Cuban Rum Massage combines relaxing massage techniques with the essence of rum, creating a sensory ritual designed to release tension, renew the body and awaken the senses.
-        </p>
-        <p class="text-gold-100/75 leading-relaxed mb-4">
-          A warm, enveloping and deeply relaxing experience where every detail is designed to carry you to a moment of true rest and well-being.
-        </p>
-        <p class="text-gold-200 italic leading-relaxed mb-8">
-          A different experience. An unforgettable ritual. Only at Hands and Paradise Spa.
-        </p>
-        <div class="flex items-center justify-between flex-wrap gap-4">
-          <span class="font-display text-3xl gold-text font-bold">₡33,900</span>
-          <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Cuban%20Rum%20Massage.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Cuban Rum Massage" class="btn-primary inline-flex items-center gap-2 font-semibold uppercase tracking-wider px-7 py-3 rounded-full text-sm focus-gold">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book this ritual
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROMOCIÓN DESTACADA -->
-<section class="py-20 bg-gradient-to-r from-gold-700/20 via-ink-800 to-gold-700/20 border-y border-gold-400/15">
-  <div class="max-w-5xl mx-auto px-6 sm:px-8 text-center reveal">
-    <p class="uppercase tracking-[0.35em] text-white text-xs mb-4 font-semibold">Current Offers</p>
-    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-100 mb-5">Book your wellness moment today</h2>
-    <p class="text-gold-100/75 max-w-2xl mx-auto mb-8">
-      Ask our team on WhatsApp about this month's offers and packages. Limited availability depending on our schedule.
-    </p>
-    <button onclick="abrirReserva()" class="btn-primary font-semibold uppercase tracking-wider px-9 py-4 rounded-full text-sm focus-gold">
-      Check Availability
-    </button>
   </div>
 </section>
 
 <!-- PAQUETES -->
-<section id="paquetes" class="py-24 max-w-6xl mx-auto px-6 sm:px-8">
-  <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+<section id="paquetes" class="py-14 sm:py-24 max-w-6xl mx-auto px-6 sm:px-8">
+  <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 reveal">
     <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">Combine &amp; Save</p>
     <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-100 mb-5">Our Packages</h2>
     <div class="gold-line mx-auto mb-5"></div>
     <p class="text-gold-100/70">Prices in Costa Rican colones (₡). Message us on WhatsApp to book any package.</p>
   </div>
-  <div class="grid sm:grid-cols-2 gap-8">
-    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex flex-col">
-      <img src="/img/package-1-total-relaxation-amp-deep-facial-2-hours-60-000.webp" alt="Package 1: Total Relaxation &amp; Deep Facial, 2 hours, ₡60,000" loading="lazy" decoding="async" width="960" height="1404" class="w-full h-auto object-contain rounded-lg">
-      <div class="px-3 sm:px-4 pt-6 pb-3 flex flex-col flex-1">
-        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-2">Package 1</p>
-        <h3 class="font-display text-2xl text-gold-100 font-semibold mb-3">Total Relaxation &amp; Deep Facial</h3>
-        <p class="text-gold-100/70 text-sm leading-relaxed mb-5"><span class="text-gold-200 font-medium">Includes:</span> Relaxing massage and deep facial cleansing.</p>
-        <div class="flex items-end justify-between gap-3 mb-5 border-t border-gold-400/15 pt-4">
+  <div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
+    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex gap-4 sm:gap-0 sm:flex-col">
+      <a href="/img/package-1-total-relaxation-amp-deep-facial-2-hours-60-000.webp" target="_blank" rel="noopener" class="block w-28 sm:w-full shrink-0 self-start focus-gold rounded-lg" aria-label="See full poster: Package 1: Total Relaxation &amp; Deep Facial, 2 hours, ₡60,000"><img src="/img/package-1-total-relaxation-amp-deep-facial-2-hours-60-000.webp" alt="Package 1: Total Relaxation &amp; Deep Facial, 2 hours, ₡60,000" loading="lazy" decoding="async" width="960" height="1404" class="w-full h-auto object-contain rounded-lg"></a>
+      <div class="py-1 pr-1 sm:px-4 sm:pt-6 sm:pb-3 flex flex-col flex-1 min-w-0">
+        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-1 sm:mb-2">Package 1</p>
+        <h3 class="font-display text-lg sm:text-2xl text-gold-100 font-semibold leading-snug mb-2 sm:mb-3">Total Relaxation &amp; Deep Facial</h3>
+        <p class="text-gold-100/70 text-sm leading-relaxed mb-3 sm:mb-5"><span class="text-gold-200 font-medium">Includes:</span> Relaxing massage and deep facial cleansing.</p>
+        <div class="flex items-end justify-between gap-3 mb-3 sm:mb-5 border-t border-gold-400/15 pt-3 sm:pt-4">
           <span class="text-xs uppercase tracking-widest text-gold-300">⏱ 2 hours</span>
-          <span class="font-display text-2xl gold-text font-bold">₡60,000</span>
+          <span class="font-display text-xl sm:text-2xl gold-text font-bold">₡60,000</span>
         </div>
-        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%201%3A%20Total%20Relaxation%20%26%20Deep%20Facial%20%282%20hours%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 1: Total Relaxation &amp; Deep Facial" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-6 py-3.5 rounded-full text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book this package</a>
+        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%201%3A%20Total%20Relaxation%20%26%20Deep%20Facial%20%282%20hours%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 1: Total Relaxation &amp; Deep Facial" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-4 py-3 rounded-full text-xs sm:text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book<span class="hidden sm:inline"> this package</span></a>
       </div>
     </article>
-    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex flex-col">
-      <img src="/img/package-2-slimming-treatment-with-cavitation-radiofrequency.webp" alt="Package 2: Slimming treatment with cavitation, radiofrequency, lipolysis, wood therapy and cryotherapy, 2 hours, ₡75,000" loading="lazy" decoding="async" width="960" height="1403" class="w-full h-auto object-contain rounded-lg">
-      <div class="px-3 sm:px-4 pt-6 pb-3 flex flex-col flex-1">
-        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-2">Package 2</p>
-        <h3 class="font-display text-2xl text-gold-100 font-semibold mb-3">Slimming</h3>
-        <p class="text-gold-100/70 text-sm leading-relaxed mb-5"><span class="text-gold-200 font-medium">Includes:</span> Cavitation, radiofrequency, lipolysis, manual massage, wood therapy and cryotherapy.</p>
-        <div class="flex items-end justify-between gap-3 mb-5 border-t border-gold-400/15 pt-4">
+    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex gap-4 sm:gap-0 sm:flex-col">
+      <a href="/img/package-2-slimming-treatment-with-cavitation-radiofrequency.webp" target="_blank" rel="noopener" class="block w-28 sm:w-full shrink-0 self-start focus-gold rounded-lg" aria-label="See full poster: Package 2: Slimming treatment with cavitation, radiofrequency, lipolysis, wood therapy and cryotherapy, 2 hours, ₡75,000"><img src="/img/package-2-slimming-treatment-with-cavitation-radiofrequency.webp" alt="Package 2: Slimming treatment with cavitation, radiofrequency, lipolysis, wood therapy and cryotherapy, 2 hours, ₡75,000" loading="lazy" decoding="async" width="960" height="1403" class="w-full h-auto object-contain rounded-lg"></a>
+      <div class="py-1 pr-1 sm:px-4 sm:pt-6 sm:pb-3 flex flex-col flex-1 min-w-0">
+        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-1 sm:mb-2">Package 2</p>
+        <h3 class="font-display text-lg sm:text-2xl text-gold-100 font-semibold leading-snug mb-2 sm:mb-3">Slimming</h3>
+        <p class="text-gold-100/70 text-sm leading-relaxed mb-3 sm:mb-5"><span class="text-gold-200 font-medium">Includes:</span> Cavitation, radiofrequency, lipolysis, manual massage, wood therapy and cryotherapy.</p>
+        <div class="flex items-end justify-between gap-3 mb-3 sm:mb-5 border-t border-gold-400/15 pt-3 sm:pt-4">
           <span class="text-xs uppercase tracking-widest text-gold-300">⏱ 2 hours</span>
-          <span class="font-display text-2xl gold-text font-bold">₡75,000</span>
+          <span class="font-display text-xl sm:text-2xl gold-text font-bold">₡75,000</span>
         </div>
-        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%202%3A%20Slimming%20%282%20hours%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 2: Slimming" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-6 py-3.5 rounded-full text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book this package</a>
+        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%202%3A%20Slimming%20%282%20hours%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 2: Slimming" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-4 py-3 rounded-full text-xs sm:text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book<span class="hidden sm:inline"> this package</span></a>
       </div>
     </article>
-    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex flex-col">
-      <img src="/img/package-3-deep-relaxation-amp-acupressure-90-minutes-50-000.webp" alt="Package 3: Deep Relaxation &amp; Acupressure, 90 minutes, ₡50,000" loading="lazy" decoding="async" width="960" height="1388" class="w-full h-auto object-contain rounded-lg">
-      <div class="px-3 sm:px-4 pt-6 pb-3 flex flex-col flex-1">
-        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-2">Package 3</p>
-        <h3 class="font-display text-2xl text-gold-100 font-semibold mb-3">Deep Relaxation &amp; Acupressure</h3>
-        <p class="text-gold-100/70 text-sm leading-relaxed mb-5"><span class="text-gold-200 font-medium">Includes:</span> Relaxing massage with face and scalp acupressure.</p>
-        <div class="flex items-end justify-between gap-3 mb-5 border-t border-gold-400/15 pt-4">
+    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex gap-4 sm:gap-0 sm:flex-col">
+      <a href="/img/package-3-deep-relaxation-amp-acupressure-90-minutes-50-000.webp" target="_blank" rel="noopener" class="block w-28 sm:w-full shrink-0 self-start focus-gold rounded-lg" aria-label="See full poster: Package 3: Deep Relaxation &amp; Acupressure, 90 minutes, ₡50,000"><img src="/img/package-3-deep-relaxation-amp-acupressure-90-minutes-50-000.webp" alt="Package 3: Deep Relaxation &amp; Acupressure, 90 minutes, ₡50,000" loading="lazy" decoding="async" width="960" height="1388" class="w-full h-auto object-contain rounded-lg"></a>
+      <div class="py-1 pr-1 sm:px-4 sm:pt-6 sm:pb-3 flex flex-col flex-1 min-w-0">
+        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-1 sm:mb-2">Package 3</p>
+        <h3 class="font-display text-lg sm:text-2xl text-gold-100 font-semibold leading-snug mb-2 sm:mb-3">Deep Relaxation &amp; Acupressure</h3>
+        <p class="text-gold-100/70 text-sm leading-relaxed mb-3 sm:mb-5"><span class="text-gold-200 font-medium">Includes:</span> Relaxing massage with face and scalp acupressure.</p>
+        <div class="flex items-end justify-between gap-3 mb-3 sm:mb-5 border-t border-gold-400/15 pt-3 sm:pt-4">
           <span class="text-xs uppercase tracking-widest text-gold-300">⏱ 90 minutes</span>
-          <span class="font-display text-2xl gold-text font-bold">₡50,000</span>
+          <span class="font-display text-xl sm:text-2xl gold-text font-bold">₡50,000</span>
         </div>
-        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%203%3A%20Deep%20Relaxation%20%26%20Acupressure%20%2890%20minutes%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 3: Deep Relaxation &amp; Acupressure" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-6 py-3.5 rounded-full text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book this package</a>
+        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%203%3A%20Deep%20Relaxation%20%26%20Acupressure%20%2890%20minutes%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 3: Deep Relaxation &amp; Acupressure" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-4 py-3 rounded-full text-xs sm:text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book<span class="hidden sm:inline"> this package</span></a>
       </div>
     </article>
-    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex flex-col">
-      <img src="/img/package-4-localized-massage-amp-facial-yoga-80-minutes-45-00.webp" alt="Package 4: Localized Massage &amp; Facial Yoga, 80 minutes, ₡45,000" loading="lazy" decoding="async" width="960" height="1403" class="w-full h-auto object-contain rounded-lg">
-      <div class="px-3 sm:px-4 pt-6 pb-3 flex flex-col flex-1">
-        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-2">Package 4</p>
-        <h3 class="font-display text-2xl text-gold-100 font-semibold mb-3">Localized Massage &amp; Facial Yoga</h3>
-        <p class="text-gold-100/70 text-sm leading-relaxed mb-5"><span class="text-gold-200 font-medium">Includes:</span> Localized massage, back exfoliation and facial yoga.</p>
-        <div class="flex items-end justify-between gap-3 mb-5 border-t border-gold-400/15 pt-4">
+    <article class="reveal package-frame rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-gold-400/20 p-3 flex gap-4 sm:gap-0 sm:flex-col">
+      <a href="/img/package-4-localized-massage-amp-facial-yoga-80-minutes-45-00.webp" target="_blank" rel="noopener" class="block w-28 sm:w-full shrink-0 self-start focus-gold rounded-lg" aria-label="See full poster: Package 4: Localized Massage &amp; Facial Yoga, 80 minutes, ₡45,000"><img src="/img/package-4-localized-massage-amp-facial-yoga-80-minutes-45-00.webp" alt="Package 4: Localized Massage &amp; Facial Yoga, 80 minutes, ₡45,000" loading="lazy" decoding="async" width="960" height="1403" class="w-full h-auto object-contain rounded-lg"></a>
+      <div class="py-1 pr-1 sm:px-4 sm:pt-6 sm:pb-3 flex flex-col flex-1 min-w-0">
+        <p class="uppercase tracking-[0.3em] text-gold-400 text-xs mb-1 sm:mb-2">Package 4</p>
+        <h3 class="font-display text-lg sm:text-2xl text-gold-100 font-semibold leading-snug mb-2 sm:mb-3">Localized Massage &amp; Facial Yoga</h3>
+        <p class="text-gold-100/70 text-sm leading-relaxed mb-3 sm:mb-5"><span class="text-gold-200 font-medium">Includes:</span> Localized massage, back exfoliation and facial yoga.</p>
+        <div class="flex items-end justify-between gap-3 mb-3 sm:mb-5 border-t border-gold-400/15 pt-3 sm:pt-4">
           <span class="text-xs uppercase tracking-widest text-gold-300">⏱ 80 minutes</span>
-          <span class="font-display text-2xl gold-text font-bold">₡45,000</span>
+          <span class="font-display text-xl sm:text-2xl gold-text font-bold">₡45,000</span>
         </div>
-        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%204%3A%20Localized%20Massage%20%26%20Facial%20Yoga%20%2880%20minutes%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 4: Localized Massage &amp; Facial Yoga" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-6 py-3.5 rounded-full text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book this package</a>
+        <a href="https://wa.me/50660051314?text=Hi%2C%20I%27d%20like%20to%20book%3A%20Package%204%3A%20Localized%20Massage%20%26%20Facial%20Yoga%20%2880%20minutes%29.%20What%20availability%20do%20you%20have%3F" target="_blank" rel="noopener" data-track="whatsapp" data-service="Package 4: Localized Massage &amp; Facial Yoga" class="mt-auto btn-primary inline-flex items-center justify-center gap-2 w-full font-semibold uppercase tracking-wider px-4 py-3 rounded-full text-xs sm:text-sm focus-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 15.9c0 2.5.7 4.9 2 7L3 29l6.3-2a13 13 0 0 0 6.7 1.8c7.2 0 13-5.8 13-12.9S23.2 3 16 3zm7.6 18.3c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1.1-4.1-1.7-6.7-5.8-6.9-6.1-.2-.3-1.6-2.2-1.6-4.1 0-2 1-2.9 1.4-3.3.3-.4.8-.5 1-.5h.7c.2 0 .5 0 .8.6l1.1 2.7c.1.2.2.5 0 .8l-.4.6-.6.6c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.2-1.4c.3-.4.5-.3.9-.2l2.6 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.8z"/></svg>Book<span class="hidden sm:inline"> this package</span></a>
       </div>
     </article>
   </div>
 </section>
 
-<!-- GALERÍA -->
-<section id="galeria" class="py-24 bg-ink-800/40 border-y border-gold-400/10">
+<!-- CONOCE EL SPA: GALERÍA + VIDEOS -->
+<section id="galeria" class="py-14 sm:py-24 bg-ink-800/40 border-y border-gold-400/10">
   <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">Our Space</p>
-      <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-100 mb-5">Gallery</h2>
-      <div class="gold-line mx-auto"></div>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 reveal">
+      <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">Get to know our spa</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-100 mb-5">Your slice of paradise in the heart of the city</h2>
+      <div class="gold-line mx-auto mb-5"></div>
+      <p class="text-gold-100/75 leading-relaxed">At Hands and Paradise Spa we believe wellness is a right, not an occasional luxury. Every treatment is designed to help you unwind, take care of yourself and restore your physical and mental balance.</p>
+      <p class="text-gold-100/75 leading-relaxed mt-3">Our team of professional therapists works to the highest standards of respect, hygiene and excellence, offering a safe, warm and truly restorative experience on every visit. Visiting Costa Rica? We are just minutes from La Sabana Park and Rohrmoser, and we are happy to assist you in English.</p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="/img/rincon-de-relajacion-del-spa.webp" width="1050" height="1400" decoding="async" alt="Spa relaxation corner" loading="lazy" class="reveal rounded-xl w-full h-56 object-cover hover:scale-[1.03] transition duration-500">
-      <img src="/img/sala-de-tratamientos-de-hands-and-paradise-spa.webp" width="1050" height="1400" decoding="async" alt="Treatment room at Hands and Paradise Spa" loading="lazy" class="reveal rounded-xl w-full h-56 object-cover hover:scale-[1.03] transition duration-500">
-      <img src="/img/detalle-de-decoracion-del-spa.webp" width="1050" height="1400" decoding="async" alt="Spa decor detail" loading="lazy" class="reveal rounded-xl w-full h-56 object-cover hover:scale-[1.03] transition duration-500">
-      <img src="/img/terapeuta-realizando-un-tratamiento-de-bienestar.webp" width="630" height="1400" decoding="async" alt="Therapist performing a wellness treatment" loading="lazy" class="reveal rounded-xl w-full h-56 object-cover hover:scale-[1.03] transition duration-500">
-      <img src="/img/area-de-recepcion-del-spa.webp" width="630" height="1400" decoding="async" alt="Spa reception area" loading="lazy" class="reveal rounded-xl w-full h-56 object-cover hover:scale-[1.03] transition duration-500">
-      <img src="/img/ambiente-exclusivo-del-spa-hands-and-paradise.webp" width="1050" height="1400" decoding="async" alt="Exclusive atmosphere at Hands and Paradise Spa" loading="lazy" class="reveal rounded-xl w-full h-56 object-cover hover:scale-[1.03] transition duration-500">
+
+    <div class="flex justify-center gap-2.5 mb-6 sm:mb-8" role="tablist" aria-label="Spa photos and videos">
+      <button type="button" role="tab" id="tab-fotos" aria-controls="panel-fotos" aria-selected="true" class="tab-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-6 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold">Photos</button>
+      <button type="button" role="tab" id="tab-videos" aria-controls="videos" aria-selected="false" class="tab-btn border border-gold-400/30 text-gold-100 hover:border-gold-300 rounded-full px-6 py-2.5 text-xs sm:text-sm font-medium uppercase tracking-wider transition focus-gold">Videos</button>
     </div>
-  </div>
-</section>
 
-<!-- VIDEOS -->
-<section id="videos" class="py-24 max-w-7xl mx-auto px-6 sm:px-8">
-  <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-    <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">You have to feel this!</p>
-    <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-100 mb-5">Experiences You Can Feel</h2>
-    <div class="gold-line mx-auto"></div>
-  </div>
+    <div id="panel-fotos" role="tabpanel" aria-labelledby="tab-fotos" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <img loading="lazy" src="/img/terapeuta-profesional-preparando-una-experiencia-de-bienesta.webp" width="1050" height="1400" decoding="async" alt="Professional therapist preparing a wellness experience at Hands and Paradise Spa" class="reveal col-span-2 rounded-xl w-full h-48 sm:h-56 object-cover hover:scale-[1.03] transition duration-500">
+      <img src="/img/rincon-de-relajacion-del-spa.webp" width="1050" height="1400" decoding="async" alt="Spa relaxation corner" loading="lazy" class="reveal rounded-xl w-full h-36 sm:h-56 object-cover hover:scale-[1.03] transition duration-500">
+      <img src="/img/sala-de-tratamientos-de-hands-and-paradise-spa.webp" width="1050" height="1400" decoding="async" alt="Treatment room at Hands and Paradise Spa" loading="lazy" class="reveal rounded-xl w-full h-36 sm:h-56 object-cover hover:scale-[1.03] transition duration-500">
+      <img src="/img/detalle-de-decoracion-del-spa.webp" width="1050" height="1400" decoding="async" alt="Spa decor detail" loading="lazy" class="reveal rounded-xl w-full h-36 sm:h-56 object-cover hover:scale-[1.03] transition duration-500">
+      <img src="/img/terapeuta-realizando-un-tratamiento-de-bienestar.webp" width="630" height="1400" decoding="async" alt="Therapist performing a wellness treatment" loading="lazy" class="reveal rounded-xl w-full h-36 sm:h-56 object-cover hover:scale-[1.03] transition duration-500">
+      <img src="/img/area-de-recepcion-del-spa.webp" width="630" height="1400" decoding="async" alt="Spa reception area" loading="lazy" class="reveal rounded-xl w-full h-36 sm:h-56 object-cover hover:scale-[1.03] transition duration-500">
+      <img src="/img/ambiente-exclusivo-del-spa-hands-and-paradise.webp" width="1050" height="1400" decoding="async" alt="Exclusive atmosphere at Hands and Paradise Spa" loading="lazy" class="reveal rounded-xl w-full h-36 sm:h-56 object-cover hover:scale-[1.03] transition duration-500">
+    </div>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-
-    <button type="button" class="video-card reveal card-surface rounded-2xl overflow-hidden text-left group focus-gold" data-video-url="https://youtube.com/shorts/-5vBb-npcHU?feature=share" aria-label="Play video: Acne control facial">
-      <div class="relative h-64 overflow-hidden">
-        <img src="/img/miniatura-del-video-facial-control-acne.webp" width="900" height="900" decoding="async" alt="Acne control facial video thumbnail" loading="lazy" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-90">
-        <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition">
-          <span class="h-16 w-16 rounded-full bg-ink-900/60 border border-gold-300/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-gold-200 ml-1"><path d="M8 5v14l11-7z"/></svg>
-          </span>
+    <div id="videos" role="tabpanel" aria-labelledby="tab-videos" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 scroll-mt-24">
+      <button type="button" class="video-card reveal card-surface rounded-2xl overflow-hidden text-left group focus-gold" data-video-url="https://youtube.com/shorts/-5vBb-npcHU?feature=share" aria-label="Play video: Acne control facial">
+        <div class="relative h-44 sm:h-60 overflow-hidden">
+          <img src="/img/miniatura-del-video-facial-control-acne.webp" width="900" height="900" decoding="async" alt="Acne control facial video thumbnail" loading="lazy" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-90">
+          <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition">
+            <span class="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-ink-900/60 border border-gold-300/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-gold-200 ml-1"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="p-6">
-        <h3 class="font-display text-lg text-gold-100 font-semibold mb-1">Acne Control Facial</h3>
-        <p class="text-gold-100/65 text-sm leading-relaxed">See how we perform this specialized treatment for acne-prone skin.</p>
-      </div>
-    </button>
-
-    <button type="button" class="video-card reveal card-surface rounded-2xl overflow-hidden text-left group focus-gold" data-video-url="https://youtube.com/shorts/XNGgJQ_WRGU?feature=share" aria-label="Play video: Deep cleansing facial">
-      <div class="relative h-64 overflow-hidden">
-        <img src="/img/miniatura-del-video-limpieza-profunda.webp" width="436" height="900" decoding="async" alt="Deep cleansing facial video thumbnail" loading="lazy" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-90">
-        <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition">
-          <span class="h-16 w-16 rounded-full bg-ink-900/60 border border-gold-300/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-gold-200 ml-1"><path d="M8 5v14l11-7z"/></svg>
-          </span>
+        <div class="p-3 sm:p-5">
+          <h3 class="font-display text-sm sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Acne Control Facial</h3>
+          <p class="hidden sm:block text-gold-100/65 text-sm leading-relaxed">See how we perform this specialized treatment for acne-prone skin.</p>
         </div>
-      </div>
-      <div class="p-6">
-        <h3 class="font-display text-lg text-gold-100 font-semibold mb-1">Deep Cleansing Facial</h3>
-        <p class="text-gold-100/65 text-sm leading-relaxed">A step-by-step look at our deep cleansing facial.</p>
-      </div>
-    </button>
-
-    <button type="button" class="video-card reveal card-surface rounded-2xl overflow-hidden text-left group focus-gold" data-video-url="https://youtube.com/shorts/rqCGE4dJMG8?feature=share" aria-label="Play video: Therapeutic massage with stretching">
-      <div class="relative h-64 overflow-hidden">
-        <img src="/img/miniatura-del-video-masaje-terapeutico-con-estiramientos.webp" width="504" height="900" decoding="async" alt="Therapeutic massage with stretching video thumbnail" loading="lazy" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-90">
-        <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition">
-          <span class="h-16 w-16 rounded-full bg-ink-900/60 border border-gold-300/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-gold-200 ml-1"><path d="M8 5v14l11-7z"/></svg>
-          </span>
+      </button>
+      <button type="button" class="video-card reveal card-surface rounded-2xl overflow-hidden text-left group focus-gold" data-video-url="https://youtube.com/shorts/XNGgJQ_WRGU?feature=share" aria-label="Play video: Deep cleansing facial">
+        <div class="relative h-44 sm:h-60 overflow-hidden">
+          <img src="/img/miniatura-del-video-limpieza-profunda.webp" width="436" height="900" decoding="async" alt="Deep cleansing facial video thumbnail" loading="lazy" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-90">
+          <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition">
+            <span class="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-ink-900/60 border border-gold-300/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-gold-200 ml-1"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="p-6">
-        <h3 class="font-display text-lg text-gold-100 font-semibold mb-1">Therapeutic Massage with Stretching</h3>
-        <p class="text-gold-100/65 text-sm leading-relaxed">Get a close look at this combination of massage and stretching designed for your physical recovery.</p>
-      </div>
-    </button>
-
+        <div class="p-3 sm:p-5">
+          <h3 class="font-display text-sm sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Deep Cleansing Facial</h3>
+          <p class="hidden sm:block text-gold-100/65 text-sm leading-relaxed">A step-by-step look at our deep cleansing facial.</p>
+        </div>
+      </button>
+      <button type="button" class="video-card reveal card-surface rounded-2xl overflow-hidden text-left group focus-gold" data-video-url="https://youtube.com/shorts/rqCGE4dJMG8?feature=share" aria-label="Play video: Therapeutic massage with stretching">
+        <div class="relative h-44 sm:h-60 overflow-hidden">
+          <img src="/img/miniatura-del-video-masaje-terapeutico-con-estiramientos.webp" width="504" height="900" decoding="async" alt="Therapeutic massage with stretching video thumbnail" loading="lazy" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 group-hover:brightness-90">
+          <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition">
+            <span class="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-ink-900/60 border border-gold-300/50 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7 text-gold-200 ml-1"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
+        </div>
+        <div class="p-3 sm:p-5">
+          <h3 class="font-display text-sm sm:text-lg text-gold-100 font-semibold leading-snug mb-1">Therapeutic Massage with Stretching</h3>
+          <p class="hidden sm:block text-gold-100/65 text-sm leading-relaxed">Get a close look at this combination of massage and stretching designed for your physical recovery.</p>
+        </div>
+      </button>
+    </div>
   </div>
 </section>
 
 <!-- RESEÑAS GOOGLE -->
-<section id="resenas" class="py-20 bg-gradient-to-r from-gold-700/20 via-ink-800 to-gold-700/20 border-y border-gold-400/15">
+<section id="resenas" class="py-12 sm:py-20 bg-gradient-to-r from-gold-700/20 via-ink-800 to-gold-700/20 border-y border-gold-400/15">
   <div class="max-w-3xl mx-auto px-6 sm:px-8 text-center reveal">
     <p class="uppercase tracking-[0.35em] text-white text-xs mb-4 font-semibold">Your opinion matters</p>
     <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-100 mb-5">Enjoyed your visit?</h2>
     <div class="flex justify-center gap-1.5 text-gold-300 mb-6" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.5l7.1-.6z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.5l7.1-.6z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.5l7.1-.6z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.5l7.1-.6z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.5l7.1-.6z"/></svg></div>
-    <p class="text-gold-100/75 max-w-2xl mx-auto mb-8">Please leave us a Google review. It only takes a minute and helps other travelers and expats in San José find us.</p>
+    <p class="text-gold-100/75 max-w-2xl mx-auto mb-6 sm:mb-8">Please leave us a Google review. It only takes a minute and helps other travelers and expats in San José find us.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://g.page/r/CTNAUmcCRyGLEBE/review" target="_blank" rel="noopener" class="btn-primary font-semibold uppercase tracking-wider px-9 py-4 rounded-full text-sm focus-gold w-full sm:w-auto text-center">★ Write a review</a>
-      <a href="https://maps.app.goo.gl/EFnR2uUWaTrLCwTR7?g_st=aw" target="_blank" rel="noopener" class="border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 font-medium uppercase tracking-wider px-9 py-4 rounded-full text-sm transition focus-gold w-full sm:w-auto text-center">Read our Google reviews</a>
+      <a href="https://g.page/r/CTNAUmcCRyGLEBE/review" target="_blank" rel="noopener" class="btn-primary font-semibold uppercase tracking-wider px-8 py-3.5 rounded-full text-sm focus-gold w-full sm:w-auto text-center">★ Write a review</a>
+      <a href="https://maps.app.goo.gl/EFnR2uUWaTrLCwTR7?g_st=aw" target="_blank" rel="noopener" class="border border-gold-300/50 text-gold-100 hover:bg-gold-300/10 font-medium uppercase tracking-wider px-8 py-3.5 rounded-full text-sm transition focus-gold w-full sm:w-auto text-center">Read our Google reviews</a>
     </div>
   </div>
 </section>
 
 <!-- POLÍTICAS -->
-<section id="politicas" class="py-24 max-w-4xl mx-auto px-6 sm:px-8">
-  <div class="text-center mb-12 reveal">
+<section id="politicas" class="py-14 sm:py-24 max-w-4xl mx-auto px-6 sm:px-8">
+  <div class="text-center mb-8 sm:mb-10 reveal">
     <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">Important</p>
-    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-100">Policies</h2>
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-100">Booking and service policies</h2>
     <div class="gold-line mx-auto mt-5"></div>
   </div>
-  <div class="reveal card-surface rounded-2xl p-8 sm:p-10 text-gold-100/85 leading-relaxed text-sm sm:text-base">
-    <h3 class="font-display text-xl text-gold-100 font-semibold mb-6">Booking and service policies</h3>
-    <ul class="space-y-4">
+  <div class="reveal card-surface rounded-2xl p-6 sm:p-10 text-gold-100/85 leading-relaxed text-sm sm:text-base">
+    <ul class="space-y-3 sm:space-y-4">
       <li class="flex gap-3"><span aria-hidden="true">🕜</span><span><strong class="text-gold-100 font-semibold">Punctuality:</strong> Please arrive 10 minutes before your appointment so we can provide your service properly and on time.</span></li>
       <li class="flex gap-3"><span aria-hidden="true">📝</span><span><strong class="text-gold-100 font-semibold">Reservations:</strong> We recommend booking at least one day in advance to guarantee availability of your preferred service and time.</span></li>
       <li class="flex gap-3"><span aria-hidden="true">❌️</span><span><strong class="text-gold-100 font-semibold">Cancellations:</strong> Once a reservation is made, if the service is cancelled on the same day it was booked, a 30% charge on the service price will apply.</span></li>
@@ -951,17 +734,17 @@
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="py-24 bg-ink-800/40 border-t border-gold-400/10">
+<section id="contacto" class="py-14 sm:py-24 bg-ink-800/40 border-t border-gold-400/10">
   <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 reveal">
       <p class="uppercase tracking-[0.3em] text-white text-xs mb-4 font-semibold">We are here for you</p>
       <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-100 mb-5">Contact &amp; Location</h2>
       <div class="gold-line mx-auto"></div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12">
-      <div class="reveal card-surface rounded-2xl p-8 sm:p-10 space-y-6">
-        <div class="flex items-start gap-4">
+    <div class="grid lg:grid-cols-2 gap-6 lg:gap-12">
+      <div class="reveal card-surface rounded-2xl p-6 sm:p-10 grid sm:grid-cols-2 gap-5 sm:gap-6 content-start">
+        <div class="flex items-start gap-4 sm:col-span-2">
           <span class="text-gold-300 text-xl" aria-hidden="true">📍</span>
           <div>
             <h3 class="font-semibold text-gold-100 mb-1">Address</h3>
@@ -1012,14 +795,10 @@
             <p class="text-gold-100/70 text-sm">@handsandparadise</p>
           </div>
         </div>
-
-        <button onclick="abrirReserva()" class="btn-primary w-full font-semibold uppercase tracking-wider px-8 py-4 rounded-full text-sm focus-gold mt-2">
-          Book Now
-        </button>
       </div>
 
       <div class="reveal space-y-6">
-        <form id="contactForm" class="card-surface rounded-2xl p-8 sm:p-10 space-y-5" aria-label="Contact form">
+        <form id="contactForm" class="card-surface rounded-2xl p-6 sm:p-10 space-y-4 sm:space-y-5" aria-label="Contact form">
           <h3 class="font-display text-xl text-gold-100 font-semibold mb-2">Send us a message</h3>
           <p class="text-gold-100/60 text-sm -mt-2">It goes straight to our WhatsApp. We reply in English.</p>
           <div>
@@ -1032,7 +811,7 @@
           </div>
           <div>
             <label for="mensaje" class="block text-sm text-gold-100/70 mb-1.5">Message</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required class="w-full bg-ink-900 border border-gold-400/25 rounded-lg px-4 py-3 text-gold-100 placeholder-gold-100/45 focus-gold focus:border-gold-300 transition resize-none" placeholder="Tell us which service you are interested in..."></textarea>
+            <textarea id="mensaje" name="mensaje" rows="3" required class="w-full bg-ink-900 border border-gold-400/25 rounded-lg px-4 py-3 text-gold-100 placeholder-gold-100/45 focus-gold focus:border-gold-300 transition resize-none" placeholder="Tell us which service you are interested in..."></textarea>
           </div>
           <button type="submit" class="btn-primary w-full font-semibold uppercase tracking-wider px-8 py-3.5 rounded-full text-sm focus-gold">
             Send via WhatsApp
@@ -1047,8 +826,8 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-ink-900 border-t border-gold-400/15 pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+<footer class="bg-ink-900 border-t border-gold-400/15 pt-10 sm:pt-16 pb-24 sm:pb-8">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 grid sm:grid-cols-3 gap-8 sm:gap-10 mb-8 sm:mb-10">
     <div>
       <div class="flex items-center gap-3 mb-4">
         <img src="/img/logo-de-hands-and-paradise-spa.webp" width="600" height="400" decoding="async" alt="Hands and Paradise Spa logo" loading="lazy" class="h-10 w-10 object-contain rounded-full border-2 border-black p-0.5 bg-white">
@@ -1057,8 +836,8 @@
       <p class="text-gold-100/60 text-sm leading-relaxed">Your space for wellness, relaxation and professional care in San José, Costa Rica.</p>
     </div>
     <div>
-      <h4 class="text-gold-200 font-semibold uppercase text-xs tracking-widest mb-4">Navigation</h4>
-      <ul class="space-y-2 text-sm text-gold-100/60">
+      <h4 class="text-gold-200 font-semibold uppercase text-xs tracking-widest mb-3 sm:mb-4">Navigation</h4>
+      <ul class="flex flex-wrap gap-x-5 gap-y-2 sm:block sm:space-y-2 text-sm text-gold-100/60">
         <li><a href="#servicios" class="hover:text-gold-300 focus-gold">Services</a></li>
         <li><a href="#insignia" class="hover:text-gold-300 focus-gold">Signature Treatment</a></li>
         <li><a href="#paquetes" class="hover:text-gold-300 focus-gold">Packages</a></li>
@@ -1067,18 +846,13 @@
       </ul>
     </div>
     <div>
-      <h4 class="text-gold-200 font-semibold uppercase text-xs tracking-widest mb-4">Contact</h4>
+      <h4 class="text-gold-200 font-semibold uppercase text-xs tracking-widest mb-3 sm:mb-4">Contact &amp; hours</h4>
       <ul class="space-y-2 text-sm text-gold-100/60">
         <li>Edificio Diana, 2nd floor, 100m east of Cemaco Sabana Oeste, Pavas road, San José.</li>
-        <li>WhatsApp: +506 6005-1314</li>
-        <li>Landline: +506 4118-5226</li>
-        <li>handsnandparadise94@gmail.com</li>
+        <li><a data-track="whatsapp" href="https://wa.me/50660051314" target="_blank" rel="noopener" class="hover:text-gold-300 focus-gold">WhatsApp: +506 6005-1314</a> · <a data-track="phone" href="tel:+50641185226" class="hover:text-gold-300 focus-gold">Landline: 4118-5226</a></li>
+        <li>Monday to Saturday, 9:30am – 7:30pm</li>
+        <li>@handsandparadise</li>
       </ul>
-    </div>
-    <div>
-      <h4 class="text-gold-200 font-semibold uppercase text-xs tracking-widest mb-4">Opening Hours</h4>
-      <p class="text-sm text-gold-100/60 mb-4">Monday to Saturday<br>9:30am – 7:30pm</p>
-      <p class="text-sm text-gold-100/60">@handsandparadise</p>
     </div>
   </div>
   <div class="border-t border-gold-400/10 pt-6 text-center text-gold-100/60 text-xs px-6">
@@ -1307,6 +1081,32 @@
       header.classList.remove('shadow-lg', 'shadow-black/40');
     }
   }, { passive: true });
+
+  // Pestañas Fotos / Videos
+  const tabs = document.querySelectorAll('[role="tab"]');
+  function activarTab(tab) {
+    tabs.forEach(t => {
+      const activo = t === tab;
+      t.setAttribute('aria-selected', activo ? 'true' : 'false');
+      t.tabIndex = activo ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !activo;
+    });
+  }
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activarTab(tab));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const lista = [...tabs];
+      const sig = lista[(lista.indexOf(tab) + (e.key === 'ArrowRight' ? 1 : lista.length - 1)) % lista.length];
+      activarTab(sig);
+      sig.focus();
+    });
+  });
+  function tabDesdeHash() {
+    activarTab(location.hash === '#videos' ? document.getElementById('tab-videos') : document.getElementById('tab-fotos'));
+  }
+  tabDesdeHash();
+  window.addEventListener('hashchange', () => { if (location.hash === '#videos') tabDesdeHash(); });
 
   // Filtros del catálogo de servicios
   const filtros = document.querySelectorAll('.filter-btn');
